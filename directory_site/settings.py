@@ -25,7 +25,7 @@ SECRET_KEY = 'zn82=+*4^=!g2+gicbnd2nq8kn-uj8-@r!q0zef8au_b6cizsj'
 DEBUG = True
 
 #ALLOWED_HOSTS = ['www.dodworld.com', 'www.dodsupplier.com','www.fbgworldwide.com', '52.41.217.98']
-ALLOWED_HOSTS = ['52.41.217.98', '.dodsupplier.com',]
+ALLOWED_HOSTS = ['127.0.0.1', '52.41.217.98', '.dodsupplier.com',]
 
 # Application definition
 
@@ -74,15 +74,27 @@ WSGI_APPLICATION = 'directory_site.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'fbg',
+#         'USER': 'fbg_dev',
+#         'PASSWORD': 'fbgSB14@',
+# 	'HOST': 'localhost',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'fbg',
-        'USER': 'fbg_dev',
-        'PASSWORD': 'fbgSB14@',
-	'HOST': 'localhost',
+        'NAME': 'directory_site',
+        'USER': 'fbg',
+        'PASSWORD': 'passpass',
+  'HOST': 'localhost',
     }
 }
+
+
 
 
 # Password validation
