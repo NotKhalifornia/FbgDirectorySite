@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:700" rel="stylesheet">
+    <style>
+        html {
+            font-family: 'Merriweather';
+
+        }
+
+        .results {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            list-style-type: none !important;
+            background-color: #dedeed;
+            text-align: left;
+            width: 40%;
+            border:2px solid #990000;
+            box-shadow: none;
+            padding: 20px;
+
+        }
+
+        .results:hover {
+            box-shadow: 1px 1px 0px #1D1D72;
+            border:3px solid #1D1D72;
+        }
+        .results li {
+            list-style-type:square;
+        }
+
+        h1 {
+
+            color: #24248f;
+            font-size: 48px;
+            width: 90%;
+        }
+
+        h3 {
+            color: #990000;
+            font-size: 24px;
+            font-style: italic;
+
+        }
+
+        #company {
+            text-align: center !important;
+        }
+
+        #id_search_terms {
+            height: 100%;
+            line-height: 40px;
+            width: 20%;
+            font-family: 'Merriweather';
+            border: 2px solid #990000;
+            font-size: 24px;
+            color: #1D1D72;
+
+        }
+
+        #submit-btn {
+            height: 100%;
+            line-height: 40px;
+            padding-top: 4px;
+            width: 10%;
+            font-size: 24px;
+            background-color: #24248f;
+            color: white;
+            border: none;
+
+        }
+
+        #navbar {
+            background-color: #ebebfa;
+            padding-left: 100px;
+        }
+
+        #navbuttons {
+            float: right;
+            vertical-align: middle !important;
+            margin-top: 3%;
+            margin-right: 2%;
+        {#            margin:5px 0px 0px 0px;#}
+        }
+
+        #register,
+        #login,
+        #about-us {
+            margin-left: 10px;
+            margin-right: 10px;
+            display: inline-block;
+        {#            text-decoration: none;#} color: #3333cc;
+            font-size: 24px;
+
+            padding: 5px;
+        }
+
+        #register:hover,
+        #login:hover,
+        #about-us:hover {
+            color: red;
+            text-decoration: none;
+
+        }
+
+    </style>
+</head>
+<body>
+<div id="navbar">
+    {% load static %}
+    <img src="{% static "listings/FBG_LOGO.png" %} " alt="nope" height="100" width="100"/>
+    <div id="navbuttons">
+        <a id="register" href="/register">Register</a>
+        <a id="login" href="/login">Login</a>
+        <a id="about-us" href="/about-fbg">About FBG</a>
+
+    </div>
+    {#    <img src="/static/listings/FBG.png" />#}
+    {#    <img src="listings/FBG.png"/>#}
+</div>
+
+
+<h1 style="text-align: center; width:50%; margin-top:10%; margin-left:auto;margin-right:auto;">
+    Welcome to the Federal Buyers Guide
+</h1>
+<h3 style="text-align: center; width:50%; margin-left:auto;margin-right:auto;">
+    Search by vendor name, product, naic, and much more
+</h3>
+
+<div style="text-align:center;" id="universal-search">
+    <form action="/" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                {{ field }}
+                <input id="submit-btn" type="submit" value="Submit"/>
+            </div>
+
+        {% endfor %}
+
+    </form>
+</div>
+<script>
+    // Allows for the return key to submit the form
+    $("input").keypress(function (event) {
+        if (event.which == 13) {
+            event.preventDefault();
+            $("field").submit();
+        }
+    });
+</script>
+</body>
+</html>
+
+
+
