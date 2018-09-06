@@ -22,7 +22,9 @@
                 <a id="about-us" href="/about-fbg">About FBG</a>
             </div>
         </div>
-        <div class="container-fluid splash-search">
+
+        {% include "listings/splash_page.html" %}
+<!--         <div class="container-fluid splash-search">
             <img id="splash-image"src= "{% static "listings/business_photo4.jpeg" %}" alt="alt" height="100%" width="100%"/>
             <div class="centered">
                 <div class="splash-title-container">
@@ -32,6 +34,7 @@
                     <h3 style="text-align: center; width:80%; margin-left:auto;margin-right:auto; padding-bottom:35px;">
                     Filter by set-asides and search by vendor name, product, naic, and much more
                     </h3>
+                    {% include "listings/search_bar.html" %}
                     <div style="text-align:center;" id="universal-search">
                         <form action="/" method="post">
                             {% csrf_token %}
@@ -45,12 +48,15 @@
                     </div>
                     <div class="reminder">
                     <h3 style="text-align: center; width:50%; margin-left:auto;margin-right:auto;">
-                    This directory is updated every day with care. Please let us know any issues or suggestions you have
+                    This directory is updated every day with care. Please let us know any issues or suggestions you have by visiting: <br/>
+                    <div class="reminder-reviews-btn">
+                    <a href="/reviews" >Reviews & Concerns </a> 
+                </div>
                     </h3>
                 </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         
         <script>
         // Allows for the return key to submit the form

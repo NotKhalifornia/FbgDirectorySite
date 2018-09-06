@@ -1,0 +1,11 @@
+<div style="text-align:center;" id="universal-search">
+    <form action="/" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                {{ field }}
+                <input id="submit-btn" type="submit" value="&#xf002 Search"/>
+            </div>
+        {% endfor %}
+    </form>
+</div>
