@@ -1,0 +1,151 @@
+
+html {
+    font-family: 'Merriweather';
+
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+.centered {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    width:80%;
+    transform: translate(-50%, -50%);
+} 
+
+.results {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    list-style-type: none !important;
+    background-color: #dedeed;
+    text-align: left;
+    width: 40%;
+    border:2px solid #990000;
+    box-shadow: none;
+    padding: 20px;
+
+}
+
+
+.results:hover {
+    box-shadow: 1px 1px 0px #1D1D72;
+    border:3px solid #1D1D72;
+}
+.results li {
+    list-style-type:square;
+}
+
+h1 {
+
+    color: white; /*#24248f;*/
+    font-size: 42px;
+    font-weight:600;
+    width: 90%;
+}
+
+h3 {
+    color: white;
+    font-size: 24px;
+    font-style: italic;
+
+}
+
+.logo-with-text {
+    text-align: justify;
+    width: 100px;
+}
+
+.logo-with-text img {
+    display: block;
+    margin: 0 auto;
+}
+
+.splash-title-container {
+    background-color:rgba(0, 0, 0, .4);
+    border:2px solid white;
+    border-radius: 5px;
+}
+#company {
+    text-align: center !important;
+}
+
+#id_search_terms {
+    height: 100%;
+    line-height: 40px;
+    width: 30%;
+    font-family: 'Merriweather';
+    border: 2px solid #990000;
+    font-size: 24px;
+    color: #1D1D72;
+
+}
+input[type="submit"] {
+    font-family: "Font Awesome 5 Free";
+    font-size: 1.3333333333333333em;
+    font-weight: 900;
+    line-height: 40px;
+    height:100%;
+    padding-top: 4px;
+    width: 15%;
+    font-size: 24px;
+    background-color: #24248f;
+    color: white;
+    border: 2px solid white;
+    border-radius: 3px;
+}
+
+
+/*#submit-btn {
+    height: 100%;
+    line-height: 40px;
+    padding-top: 4px;
+    width: 20%;
+    font-size: 24px;
+    background-color: #24248f;
+    color: white;
+    border: none;
+
+}*/
+#navbar span{
+    vertical-align: middle;
+    /*padding-bottom: 10px !important;*/
+    color: #24248f !important;
+}
+#navbar {
+    background-color: #ebebfa;
+    padding-left: 100px;
+}
+
+#navbuttons {
+    float: right;
+    vertical-align: bottom !important;
+    margin-top: 3%;
+    margin-right: 2%;
+
+}
+
+#register,
+#login,
+#about-us {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+{#            text-decoration: none;#} color: #3333cc;
+    font-size: 24px;
+
+    padding: 5px;
+}
+
+#register:hover,
+#login:hover,
+#about-us:hover {
+    color: red;
+    text-decoration: none;
+
+}
+
+
