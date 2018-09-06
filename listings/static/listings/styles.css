@@ -3,7 +3,24 @@ html {
     font-family: 'Merriweather';
 
 }
-
+.button {
+    font-family: "Font Awesome 5 Free";
+    font-size: 1.3333333333333333em;
+    font-weight: 900;
+    line-height: 40px;
+    /*height:100%;*/
+    /*top:-20px;*/
+    padding: 15px;
+    width: 15%;
+    font-size: 24px;
+    background-color: #24248f;
+    color: white;
+    border: 2px solid white;
+    border-radius: 3px;
+}
+.button:hover {
+    color:white !important;
+}
 .container {
     position: relative;
     text-align: center;
@@ -68,6 +85,7 @@ h3 {
     background-color:rgba(0, 0, 0, .4);
     border:2px solid white;
     border-radius: 5px;
+    padding:15px;
 }
 #company {
     text-align: center !important;
@@ -96,6 +114,9 @@ input[type="submit"] {
     color: white;
     border: 2px solid white;
     border-radius: 3px;
+}
+input[type="submit"]:hover {
+    text-decoration: underline;
 }
 
 
@@ -148,13 +169,13 @@ input[type="submit"] {
 
 }
 
-.reminder a {
-        font-family: "Font Awesome 5 Free";
+/*.reminder a {
+    font-family: "Font Awesome 5 Free";
     font-size: 1.3333333333333333em;
     font-weight: 900;
     line-height: 40px;
-    /*height:100%;*/
-    /*top:-20px;*/
+    height:100%;
+    top:-20px;
     padding: 15px;
     width: 15%;
     font-size: 24px;
@@ -162,7 +183,7 @@ input[type="submit"] {
     color: white;
     border: 2px solid white;
     border-radius: 3px;
-}
+}*/
 
 .reminder-reviews-btn {
     margin:20px 0;
