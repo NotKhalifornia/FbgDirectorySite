@@ -37,7 +37,7 @@ html {
 
 .centered-results {
     position: absolute;
-    top: 20%;
+    top: 17%;
     background: url("/static/listings/business_photo4.jpeg") fixed;
     background-size:cover;
     /*left: 50%;*/
