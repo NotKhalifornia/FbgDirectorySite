@@ -38,8 +38,10 @@ html {
 .centered-results {
     position: absolute;
     top: 20%;
+    background: url("/static/listings/business_photo4.jpeg") fixed;
+    background-size:cover;
     /*left: 50%;*/
-    width:80%;
+    width:100%;
     /*transform: translate(-50%, -50%);*/
 } 
 .results {
