@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:700" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        
+        {% load static %}
+        <link rel="stylesheet" href=" {% static "listings/styles.css" %} ">
+    </head>
+    <body>
+        <div id="navbar">
+            <div id="nav-stuff">
+            <!-- {% load static %} -->
+            
+            <img src="{% static "listings/FBG_LOGO.png" %} " alt="nope" height="100" width="100"/>
+         <span style="font-size:30px;" id="fbg">Federal Buyers Guide</span>
+       
+            <div id="navbuttons">
+                <a id="register" href="/register">Register</a>
+                <a id="login" href="/login">Login</a>
+                <a id="about-us" href="/about-fbg">About FBG</a>
+            </div>
+        </div>
+        </div>
+        <img style="position: fixed !important; top: 100px;"id="splash-image"src= "{% static "listings/business_photo4.jpeg" %}" alt="alt" height="100%" width="100%"/>
+        <div class="centered-results">
+{% block content %}
+{% endblock %}
+       </div>
+<!--         <div class="container-fluid splash-search">
+            <img id="splash-image"src= "{% static "listings/business_photo4.jpeg" %}" alt="alt" height="100%" width="100%"/>
+            <div class="centered">
+                <div class="splash-title-container">
+                    <h1 style="text-align: center; margin-left:auto;margin-right:auto;">
+                    Find the perfect vendor for your next contract...
+                    </h1>
+                    <h3 style="text-align: center; width:80%; margin-left:auto;margin-right:auto; padding-bottom:35px;">
+                    Filter by set-asides and search by vendor name, product, naic, and much more
+                    </h3>
+                    {% include "listings/search_bar.html" %}
+                    <div style="text-align:center;" id="universal-search">
+                        <form action="/" method="post">
+                            {% csrf_token %}
+                            {% for field in form %}
+                                <div class="form-group">
+                                    {{ field }}
+                                    <input id="submit-btn" type="submit" value="&#xf002 Search"/>
+                                </div>
+                            {% endfor %}
+                        </form>
+                    </div>
+                    <div class="reminder">
+                    <h3 style="text-align: center; width:50%; margin-left:auto;margin-right:auto;">
+                    This directory is updated every day with care. Please let us know any issues or suggestions you have by visiting: <br/>
+                    <div class="reminder-reviews-btn">
+                    <a href="/reviews" >Reviews & Concerns </a> 
+                </div>
+                    </h3>
+                </div>
+                </div>
+            </div>
+        </div> -->
+        
+        <script>
+        // Allows for the return key to submit the form
+        $("input").keypress(function (event) {
+        if (event.which == 13) {
+        event.preventDefault();
+        $("field").submit();
+        }
+        });
+        </script>
+    </body>
+</html>

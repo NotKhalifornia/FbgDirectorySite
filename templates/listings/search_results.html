@@ -1,46 +1,49 @@
-{% include "listings/index.html" %}
-<ul>
-    {% for i in search %}
+{% extends "base.html" %}
 
-        <li class="results" onclick="location.href = 'http://dodworld.com/view?client_pk={{ i.listing_client_pk }}';">
-            <div id="company">
-                <span style="text-decoration:underline">{{ i.company_name }}</span>
+{% block content %}
+{% include "listings/search_bar.html" %}
+    <ul>
+        <div style="margin-left:15px;"id="search-results-text">Search results for '{{search_terms}}': </div>
+        {% for i in search %}
+            <li class="results" onclick="location.href = 'http://dodworld.com/view?client_pk={{ i.listing_client_pk }}';">
+                <div id="company">
+                    <span style="text-decoration:underline">{{ i.company_name }}</span>
+                </div>
+                </br>
+                
+                <ul>
+                    {% if i.product_1 %}
+                        <li>
+                            {% if i.prod_1_naic %} NAIC: {{i.prod_1_naic}} - {% endif %}{{ i.product_1 }}
+                        </li>
+                    {% endif %}
+                    {% if i.product_2 %}
+                        <li>
+                            {% if i.prod_2_naic %} NAIC: {{i.prod_2_naic}} - {% endif %}{{ i.product_2 }}
+                        </li>
+                    {% endif %}
+                    {% if i.product_3 %}
+                        <li>
+                            {% if i.prod_3_naic %} NAIC: {{i.prod_3_naic}} - {% endif %}{{ i.product_3 }}
+                        </li>
+                    {% endif %}
+                    {% if i.product_4 %}
+                        <li>
+                            {% if i.prod_4_naic %} NAIC: {{i.prod_4_naic}} - {% endif %}{{ i.product_4 }}
+                        </li>
+                    {% endif %}
+                    {% if i.product_5 %}
+                        <li>
+                            {% if i.prod_5_naic %} NAIC: {{i.prod_5_naic}} - {% endif %}{{ i.product_5 }}
+                        </li>
+                    {% endif %}
+                </ul>
+                </br>
+                <div style="text-align:right;">
+                <a style="border-color:black;"class="button" href="/reviews" ><i class="fa fa-camera-retro" aria-hidden="true"></i>
+                View full listing </a>
             </div>
-            </br>
-            {#            <div id="product">product:#}
-            {#                {{ i.product_1 }}#}
-            {#            </div>#}
-            <ul>
-                {% if i.product_1 %}
-                    <li>
-                        {{ i.product_1 }} - NAIC: {{ i.prod_1_naic }}
-                    </li>
-                {% endif %}
-                {% if i.product_2 %}
-                    <li>
-                        {{ i.product_2 }} - NAIC: {{ i.prod_2_naic }}
-                    </li>
-                {% endif %}
-                {% if i.product_3 %}
-                    <li>
-                        {{ i.product_3 }} - NAIC: {{ i.prod_3_naic }}
-                    </li>
-                {% endif %}
-                {% if i.product_4 %}
-                    <li>
-                        {{ i.product_4 }} - NAIC: {{ i.prod_4_naic }}
-                    </li>
-                {% endif %}
-                {% if i.product_5 %}
-                    <li>
-                        {{ i.product_5 }} - NAIC: {{ i.prod_5_naic }}
-                    </li>
-                {% endif %}
-            </ul>
-            </br>
-
-        </li>
-
-    {% endfor %}
-
-</ul>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

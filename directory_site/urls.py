@@ -19,9 +19,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from . import views
+# from mysite.core import views as core_views
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    # url(r'^$', views.home_page),
-    url(r'^$', include('listings.urls'))
+    # url(r'^signup/$', core_views.signup, name='signup'),
+    url(r'^$', include('listings.urls')),
+
 ]
 

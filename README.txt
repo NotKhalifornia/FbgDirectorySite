@@ -1,4 +1,2 @@
-repository URL: https://github.com/khalifornia/FBG.git
-env name: fbg
-Color pallette:
--
+<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+<i class="fa fa-reply-all" aria-hidden="true"></i>

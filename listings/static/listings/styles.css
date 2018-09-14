@@ -3,6 +3,7 @@ html {
     font-family: 'Merriweather';
 
 }
+
 .button {
     font-family: "Font Awesome 5 Free";
     font-size: 1.3333333333333333em;
@@ -34,14 +35,21 @@ html {
     transform: translate(-50%, -50%);
 } 
 
+.centered-results {
+    position: absolute;
+    top: 20%;
+    /*left: 50%;*/
+    width:80%;
+    /*transform: translate(-50%, -50%);*/
+} 
 .results {
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin: 15px auto;
     list-style-type: none !important;
     background-color: #dedeed;
     text-align: left;
-    width: 40%;
-    border:2px solid #990000;
+    width: 80%;
+    border:4px solid black;
+    border-radius: 5px;
     box-shadow: none;
     padding: 20px;
 
@@ -62,6 +70,7 @@ h1 {
     font-size: 42px;
     font-weight:600;
     width: 90%;
+
 }
 
 h3 {
@@ -87,9 +96,7 @@ h3 {
     border-radius: 5px;
     padding:15px;
 }
-#company {
-    text-align: center !important;
-}
+
 
 #id_search_terms {
     height: 100%;
@@ -139,14 +146,27 @@ input[type="submit"]:hover {
 #navbar {
     background-color: #ebebfa;
     padding-left: 100px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
 }
+
 
 #navbuttons {
     float: right;
     vertical-align: bottom !important;
     margin-top: 3%;
     margin-right: 2%;
+    /*width:100%;*/
+    /*color:#24248f !important;*/
 
+}
+#navbuttons a {
+    color:#24248f;
+}
+#navbuttons a:hover {
+    text-decoration: underline;
 }
 
 #register,
@@ -155,7 +175,7 @@ input[type="submit"]:hover {
     margin-left: 10px;
     margin-right: 10px;
     display: inline-block;
-{#            text-decoration: none;#} color: #3333cc;
+    color: #3333cc;
     font-size: 24px;
 
     padding: 5px;
@@ -169,6 +189,10 @@ input[type="submit"]:hover {
 
 }
 
+#search-results-text {
+    color:white;
+    font-size:24px;
+}
 /*.reminder a {
     font-family: "Font Awesome 5 Free";
     font-size: 1.3333333333333333em;
@@ -188,3 +212,4 @@ input[type="submit"]:hover {
 .reminder-reviews-btn {
     margin:20px 0;
 }
+

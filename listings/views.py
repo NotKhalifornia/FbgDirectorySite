@@ -63,9 +63,12 @@ def listing_search(request):
                 # Q(prod_9_naic__icontains=form.cleaned_data['search_terms']) |
                 # Q(prod_10_naic__icontains=form.cleaned_data['search_terms']) |
             )
+                
+
 
             # dict to be returned in render response
             context = {
+                'search_terms': form.cleaned_data['search_terms'],
                 'search': search,
                 'form': ListingSearchForm(),
             }
