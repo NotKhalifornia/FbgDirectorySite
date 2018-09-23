@@ -18,13 +18,13 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
-from . import views
+from . import views as core_views
 # from mysite.core import views as core_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    # url(r'^signup/$', core_views.signup, name='signup'),
-    url(r'^$', include('listings.urls')),
+    url(r'^signup/$', core_views.signup, name='signup'),
+    url(r'', include('listings.urls')),
 
 ]
 

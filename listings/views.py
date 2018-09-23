@@ -80,3 +80,15 @@ def listing_search(request):
 
     # returns empty form on first page load
     return render(request, 'listings/index.html', {'form': form, 'result': result})
+
+
+def listing(request, company_name, state, prod_1_naic, client_pk):
+    try:
+        # print(client_pk)
+        company = Vendor.objects.get(listing_client_pk=client_pk)
+        # name = company['company_name']
+        print(company.company_name)
+        return HttpResponse(str(company.company_name))
+    except:
+
+        return HttpResponse("booty")

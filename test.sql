@@ -1,0 +1,1 @@
+UPDATE listings_vendor SET prod_1_naic = 111111 WHERE listing_client_pk = 37036;

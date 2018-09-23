@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:700" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        
+        {% load static %}
+        <link rel="stylesheet" href=" {% static "core_logged_in/styles.css" %} ">
+        <link rel="stylesheet" href=" {% static "core_logged_in/registration_styles.css" %} ">
+    </head>
+    <body>
+        <div id="navbar">
+            <div id="nav-stuff">
+            <!-- {% load static %} -->
+            
+            <img src="{% static "listings/FBG_LOGO.png" %} " alt="nope" height="100" width="100"/>
+         <span style="font-size:30px;" id="fbg">Federal Buyers Guide</span>
+       
+            <div id="navbuttons">
+                <a id="register" href="/register">Register</a>
+                <a id="login" href="/login">Login</a>
+                <a id="about-us" href="/about-fbg">About FBG</a>
+            </div>
+        </div>
+        </div>
+        <!-- <img style="position: fixed !important; top: 100px;"id="splash-image"src= "{% static "listings/business_photo4.jpeg" %}" alt="alt" height="100%" width="100%"/> -->
+        <div class="centered-results">
+{% block content %}
+{% endblock %}
+       </div>
+        
+        <script>
+        // Allows for the return key to submit the form
+        $("input").keypress(function (event) {
+        if (event.which == 13) {
+        event.preventDefault();
+        $("field").submit();
+        }
+        });
+        </script>
+    </body>
+</html>
