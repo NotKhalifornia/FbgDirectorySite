@@ -84,13 +84,25 @@ WSGI_APPLICATION = 'directory_site.wsgi.application'
 #     }
 # }
 
+# CHROMEBOOK
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'directory_site',
+#         'USER': 'fbg',
+#         'PASSWORD': 'passpass',
+#         'HOST': 'localhost',
+#     }
+# }
+
+#ME MUMS WINDOWS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'directory_site',
-        'USER': 'fbg',
+        'NAME': 'fbg',
+        'USER': 'postgres',
         'PASSWORD': 'passpass',
-  'HOST': 'localhost',
+        'HOST': 'localhost',
     }
 }
 

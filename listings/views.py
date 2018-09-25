@@ -88,7 +88,8 @@ def listing(request, company_name, state, prod_1_naic, client_pk):
         company = Vendor.objects.get(listing_client_pk=client_pk)
         # name = company['company_name']
         print(company.company_name)
-        return HttpResponse(str(company.company_name))
+        return render(request, 'listings/listing.html', {'company': company})
+        # return HttpResponse(str(company.company_name))
     except:
 
         return HttpResponse("booty")
