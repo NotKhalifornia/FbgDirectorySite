@@ -6,6 +6,8 @@ from listings.models import Listing, Vendor
 
 from django.db.models import Q
 
+import logging
+import datetime
 
 # Homepage view #
 # Contains search form
@@ -83,13 +85,40 @@ def listing_search(request):
 
 
 def listing(request, company_name, state, prod_1_naic, client_pk):
+    logging.basicConfig(filename="listingLog.log", level=logging.DEBUG)
+
     try:
+        naic_list = []
+        keyword_list = []
         # print(client_pk)
         company = Vendor.objects.get(listing_client_pk=client_pk)
-        # name = company['company_name']
-        print(company.company_name)
-        return render(request, 'listings/listing.html', {'company': company})
-        # return HttpResponse(str(company.company_name))
-    except:
 
-        return HttpResponse("booty")
+
+        if company.prod_1_naic: naic_list.append(company.prod_1_naic)
+        if company.prod_2_naic: naic_list.append(company.prod_2_naic)
+        if company.prod_3_naic: naic_list.append(company.prod_3_naic)
+        if company.prod_4_naic: naic_list.append(company.prod_4_naic)
+        if company.prod_5_naic: naic_list.append(company.prod_5_naic)
+            
+
+        if company.keyword: keyword_list.append(company.keyword)
+        if company.keyword_1: keyword_list.append(company.keyword_1)
+        if company.keyword_2: keyword_list.append(company.keyword_2)
+        if company.keyword_3: keyword_list.append(company.keyword_3)
+        if company.keyword_4: keyword_list.append(company.keyword_4)
+        if company.keyword_5: keyword_list.append(company.keyword_5)
+
+        print(company.company_name)
+
+        logging.info("{0}: Company of id: {1} listing was requested" \
+        .format(datetime.datetime.now(), company.listing_client_pk))
+        return render(request, 'listings/listing.html', 
+        {
+            'company': company, 
+            'naic_list': naic_list,
+            'keyword_list': keyword_list
+        })
+        # return HttpResponse(str(company.company_name))
+    except Exception as e:
+        logging.error(str(e))
+        return HttpResponse("An unexpected error has occurred, please contact us")
